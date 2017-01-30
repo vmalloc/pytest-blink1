@@ -8,14 +8,14 @@ def pytest_terminal_summary(terminalreporter, exitstatus): # pylint: disable=unu
         _pattern('pytest-failure')
 
 def _add_patterns():
-    try:
-        urlopen('http://localhost:8934/blink1/pattern/add?pname=pytest-success&pattern=0.5,%2300ff00,0.5,%23000000,0.5')
-        urlopen('http://localhost:8934/blink1/pattern/add?pname=pytest-failure&pattern=3,#ff0000,0.3,1,#ff0000,0.3,2,#000000,0.1,0,#ff0000,0.3,2,#ff0000,0.3,1,#000000,0.1,0')
-    except URLError as e:
-        pass
+    _blink('pattern/add?pname=pytest-success&pattern=0.5,%2300ff00,0.5,%23000000,0.5')
+    _blink('pattern/add?pname=pytest-failure&pattern=1,%23ff0000,0.3,1,%23ff0000,0.3,2,%23000000,0.1,0,%23ff0000,0.3,2,%23ff0000,0.3,1,%23000000,0.1,0')
 
 def _pattern(name):
+    _blink('pattern/play?pname={}'.format(name))
+
+def _blink(command):
     try:
-        urlopen('http://localhost:8934/blink1/pattern/play?pname={}'.format(name))
+        urlopen('http://localhost:8934/blink1/{}'.format(command))
     except URLError as e:
         pass
