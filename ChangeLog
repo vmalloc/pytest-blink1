@@ -1,6 +1,19 @@
 CHANGES
 =======
 
+* Update readme
+* Update readme
+
+0.0.2
+-----
+
+* Don't require sudo on Travis
+* No Travis tests for now
+* Add files
+
+0.0.1
+-----
+
 * Travis deployment
 * Update setup.cfg
 * Initial commit
