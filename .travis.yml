@@ -1,0 +1,15 @@
+language: python
+python:
+- '3.3'
+- '3.4'
+- '3.5'
+- '3.6'
+deploy:
+  provider: pypi
+  user: vmalloc
+  password:
+    secure: E6QHKx8B3B2ADQ8GTBFgupCLKkJAUaCosgcO13IHKT8l1jBj3FVaERwt5wh3iBq8O6wYoPW63XXWz/DhJcxHYgzAYVX78p9x1+V9Dbp2PDZDyRCUODW4tsrnbm/45JI9kNnAHGcCB6pZlflVDkvWCZgny3Ud+7H8LsqKKdScc5kNFSGtdzNR37POb/S/rdMFMvlNrare5sk7xBMNE0K/ATGtN3FX9AnRZumQEeEQp0cyJqcvaX3cRQoLhfLfpOaohBUJS8UYjGXTkDDXeIia9zk69m1H4q2u7UJceCOdQ/hpNn2f2xmm+1FupV1zGwJg79B56LfSKi6/oG2rKx5W9nQfpxTrXWyhygc1r2UNu5U8XK1fNMxMeGzs0201MaQ0zRqxFQhOwabEnPeJnIqOIuSRYFU59LG2yL6O2okOjG4UMsny4JmlPeInYFbQXqwcmKCNpkZoM4JbYgaf58jVVbj+UNtNEpOqIFT5iZV+9QSJKlq4C2LfN9OJm6dm1OdkMND9BXxUciSM1uHtzVPoT3vbrunPwSeFH5lrPXKk2yWufvUNYMNd+PAi733mLZ/TFpXK/KIuOrg/Smm3PppF2NHdeqliCikLLUQ2H0FiLhok6758ofeBOHqsOtgrW7ioGZr8XYNKoQQyHZRzQW4sKrSvqExHg7iA40jRiV42748=
+  on:
+    tags: true
+    distributions: sdist bdist_wheel
+    repo: vmalloc/pytest-blink1
