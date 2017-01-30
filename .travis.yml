@@ -4,6 +4,8 @@ python:
 - '3.4'
 - '3.5'
 - '3.6'
+script:
+  true
 deploy:
   provider: pypi
   user: vmalloc
