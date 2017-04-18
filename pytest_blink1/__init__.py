@@ -2,7 +2,13 @@ from urllib.request import urlopen, URLError
 
 def pytest_terminal_summary(terminalreporter, exitstatus=None): # pylint: disable=unused-argument
     _add_patterns()
-    if exitstatus == 0:
+
+    tr = terminalreporter
+    passes = len(tr.stats.get('passed', []))
+    fails = len(tr.stats.get('failed', []))
+    skips = len(tr.stats.get('deselected', []))
+    errors = len(tr.stats.get('error', []))
+    if (passes or skips) and not (fails or errors):
         _pattern('pytest-success')
     else:
         _pattern('pytest-failure')
