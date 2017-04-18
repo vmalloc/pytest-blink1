@@ -1,6 +1,6 @@
 from urllib.request import urlopen, URLError
 
-def pytest_terminal_summary(terminalreporter, exitstatus): # pylint: disable=unused-argument
+def pytest_terminal_summary(terminalreporter, exitstatus=None): # pylint: disable=unused-argument
     _add_patterns()
     if exitstatus == 0:
         _pattern('pytest-success')
