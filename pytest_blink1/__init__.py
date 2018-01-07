@@ -14,7 +14,7 @@ def pytest_terminal_summary(terminalreporter, exitstatus=None): # pylint: disabl
         _pattern('pytest-failure')
 
 def _add_patterns():
-    _blink('pattern/add?pname=pytest-success&pattern=0.5,%2300ff00,0.5,%23000000,0.5')
+    _blink('pattern/add?pname=pytest-success&pattern=3,%2300ff00,1.5,%23000000,0.5')
     _blink('pattern/add?pname=pytest-failure&pattern=1,%23ff0000,0.3,1,%23ff0000,0.3,2,%23000000,0.1,0,%23ff0000,0.3,2,%23ff0000,0.3,1,%23000000,0.1,0')
 
 def _pattern(name):
